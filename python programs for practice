@@ -1,0 +1,288 @@
+## 1. python program to print HELLO WORLD!
+
+print("HELLO WORLD!")
+
+## 2. add two NUMBERS
+
+x = 25
+y = 21
+z = x + y
+print("the sum of two numbers are",z)
+
+## 3. python program to find square root
+
+x = 25
+z = x**2
+print(z)
+
+## 4. python to calculate the area of a triangle
+
+base = int(input("Enter base: "))
+height = int(input("Enter height: "))
+triangle_area = 1/2 * base * height
+print(triangle_area)
+
+## 5. solve quadratic equation
+
+x = 5
+s = x*2-5*x+6 
+print(s)
+
+## 6. swap to variables
+
+x = 51
+y = 6
+temp = x
+x = y
+y = temp
+print(x,y)
+
+## 7. generate random number
+
+import random 
+x = random.randint(0,1111)
+print(x)
+
+## 8. convert kilometers to miles
+
+kms = int(input("enter kilometer to get miles: "))
+miles = kms*0.621371
+print(miles)
+
+## 9. celcius to fahrenheit
+
+cel = int(input("Enter celsius to get fahrenheit: "))
+faah = (cel*9/5)+32
+print(faah)
+
+## 10. if a number is +ve -ve or 0
+
+x = int(input("Enter a number: "))
+if x>0:
+    print(x, " it is positive number.")
+if x<0:
+    print(x, " it is negative number.")
+if x==0:
+    print(x, " it is 0")
+
+## 11. even or odd
+
+x = int(input("Enter a number."))
+if x%2==0:
+    print("it is even")
+if x%2!=0:
+    print("it is odd")
+
+## 12. leap year check
+
+
+x = int(input("Enter year: "))
+if x%4==0:
+    if x%100==0:
+        if x%400==0:
+            print("it is leap year")
+        else:
+            print("not a leap year")
+    else:
+        print("it is a leap year")
+else:
+    print("not a leap year")
+
+## 13. largest among three numbers
+
+x = int(input("Enter 1st number: "))
+y = int(input("Enter 2nd number: "))
+z = int(input("Enter 3rd number: "))
+if x>y&x>z:
+    print(x,"it is largest number")
+elif y>x&y>z:
+    print(y,"it is largest number")
+else:
+    print(z,"it is largest number")
+
+# 14. check prime number
+
+
+x = int(input("Enter a number to check prime number or not: "))
+if x>1:
+    for i in range(2,x):
+        if(x%i)==0:
+            print("not a prime number")
+            print(i,"times",x//i,'is',x)
+            break
+    else:
+        print("it is a prime number")
+else:
+    print("not a prime number")
+
+## 15. prime from to..
+
+
+froms = int(input("Enter number from: "))
+to = int(input("Enter number to where: "))
+for num in range(froms,to+1):
+    if num>1:
+        for i in range(2,num):
+            if (num%i)==0:
+                break
+        else:
+            print(num)
+            
+
+## 16. factorial
+
+
+x = int(input("enter number to get factorial: "))
+num=1
+for i in range(1,x+1):
+    num = num*i
+    print(num)
+
+## 17. multiplcation table
+
+x = int(input("Enter number of which want table: "))
+for i in range(1,11):
+    tab = i*x
+    print(i,"x",x,"=" ,tab)
+
+## 18. fibonacci series
+
+terms = int(input("Enter number: "))
+n1,n2 = 0,1
+count = 0
+while count<terms:
+    print(n1)
+    nth = n1+n2
+    n1=n2
+    n2=nth
+    count+=1
+
+## 19. check armstrong number
+
+
+x = int(input("enter number: "))
+order = len(str(x))
+temp=x
+sum = 0
+
+while temp>0:
+    digit =temp%10
+    sum = sum+ digit**order
+    temp//=10
+if x==sum:
+    print("It is armstrong number")
+else:
+    print("it is not an armstrong number")
+
+## 20. find armstrong number between interval
+
+# Program to check Armstrong numbers in a certain interval
+
+lower = 100
+upper = 2000
+
+for num in range(lower, upper + 1):
+
+   # order of number
+   order = len(str(num))
+    
+   # initialize sum
+   sum = 0
+
+   temp = num
+   while temp > 0:
+       digit = temp % 10
+       sum += digit ** order
+       temp //= 10
+
+   if num == sum:
+       print(num)
+
+
+## 21. sum of natural numbers
+
+x = int(input("Enter number: "))
+sum=0
+while x>0:
+    sum = sum+x
+    x = x-1
+print("sum is ",sum)   
+
+## 22. display powers of 2 using anonymous function
+
+x = int(input("Enter a number : "))
+i=1
+for i in range(x):
+    i=i+1
+    print(i,i**2)
+
+## 23. print divisible number
+
+x = int(input("Enter Number: "))
+y = int(input("Enter divisor: "))
+if (x%y==0):
+    print("it is divisible")
+else:
+    print("it is not divisible")
+
+## 24. convert decimal to binary, octal and hexadecimal
+
+x = int(input("Enter a number: "))
+print(hex(x))
+print(oct(x))
+print(bin(x))
+
+## 25. ASCII value of character
+
+x = str(input("Enter any character: "))
+
+print(ord(x))
+
+## 26. find HCF
+
+
+def hcf(x,y):
+    if x>y:
+        smaller = y
+    else:
+        smaller = x
+    for i in range(1,smaller+1):
+        if (x%i==0)&(y%i==0):
+            hcf = i
+    return hcf
+n1 = int(input("Give number: "))
+n2 = int(input("Give number: "))
+print(hcf(n1,n2))
+
+## 27. LCM
+
+def lcm(x,y):
+    if x>y:
+        greater = x
+    else:
+        greater = y
+    
+    while(True):
+        if (greater%x == 0 )& (greater%y == 0):
+            lcm = greater
+            break
+        greater=greater+1
+    return lcm
+
+n1 = int(input("Enter number: "))
+n2 = int(input("Enter number: "))
+print(lcm(n1,n2))
+
+## 28. python program to find the factors of a number
+
+x = int(input("Enter a number to check factors: "))
+
+for i in range(1,x+1):
+    if x%i==0:
+        print(i)
+    
+
+## 29. simple calculator
+
+
+
